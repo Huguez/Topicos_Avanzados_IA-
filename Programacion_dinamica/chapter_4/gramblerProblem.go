@@ -98,6 +98,8 @@ func ( g *MDP_Gambler ) run( teta float32 ) {
 			v = g.V[state]
 
 			g.V[state], g.politica[state] = g.stake( state )
+			
+			n_v = g.V[state]
 
 			delta = g.max( delta, g.abs( v - n_v ) )
 		}
